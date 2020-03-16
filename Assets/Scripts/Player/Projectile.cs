@@ -39,7 +39,14 @@ public class Projectile : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.gameObject.CompareTag("Enemy")){
             DestroyProjectile();
-            other.GetComponent<Slime>().TakeDamage(damage);
+            if(other.GetComponent<Slime>()!= null){
+                other.GetComponent<Slime>().TakeDamage(damage);
+            }
+                
+            else if(other.GetComponent<RedDemon>()!= null){
+                other.GetComponent<RedDemon>().TakeDamage(damage);
+            }
+                
         }
         if(other.gameObject.CompareTag("Ground")){
             DestroyProjectile();
