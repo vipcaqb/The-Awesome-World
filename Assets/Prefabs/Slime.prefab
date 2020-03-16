@@ -193,6 +193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07f5ce729e455e748b9a120b9b11f6bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 8
   speed: 60
   attackRange: 18
   hp: 3

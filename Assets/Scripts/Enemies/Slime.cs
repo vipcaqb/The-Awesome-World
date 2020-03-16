@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Slime : MonoBehaviour
 {
-
+    public float damage;
     public float speed;
     public float attackRange;
     public float hp;
@@ -15,12 +15,14 @@ public class Slime : MonoBehaviour
     Transform player;
     Rigidbody2D r2;
     Animator anim;
+    Status playerStatus;
     // Start is called before the first frame update
     void Start()
     {
         r2 = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         player = GameObject.Find("Player").GetComponent<Transform>();
+        playerStatus = GameObject.Find("Player").GetComponent<Status>();
     }
 
     void Update(){
@@ -63,7 +65,29 @@ public class Slime : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other) {
         if(other.gameObject.CompareTag("Player")){
-            Debug.Log("Player must take damage");
+
+            if(playerStatus.TakeDamage(damage)){
+                if(transform.position.x > player.transform.position.x){
+                    playerStatus.KnockBack(-1f);
+                }
+                else{
+                    playerStatus.KnockBack(1f);
+                }
+            }
+        }
+    }
+
+    private void OnCollisionStay2D(Collision2D other) {
+        if(other.gameObject.CompareTag("Player")){
+
+            if(playerStatus.TakeDamage(damage)){
+                if(transform.position.x > player.transform.position.x){
+                    playerStatus.KnockBack(-1f);
+                }
+                else{
+                    playerStatus.KnockBack(1f);
+                }
+            }
         }
     }
 }

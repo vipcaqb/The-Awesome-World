@@ -41,5 +41,9 @@ public class Projectile : MonoBehaviour
             DestroyProjectile();
             other.GetComponent<Slime>().TakeDamage(damage);
         }
+        if(other.gameObject.CompareTag("Ground")){
+            DestroyProjectile();
+        }
     }
+
 }

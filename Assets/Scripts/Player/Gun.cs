@@ -25,6 +25,10 @@ public class Gun : MonoBehaviour
                 Instantiate(projectile,shotpoint.position,transform.rotation);
                 timeBtwShots = startTimeBwtShots;
             }
+            else if(Input.GetMouseButton(0)){
+                Instantiate(projectile,shotpoint.position,transform.rotation);
+                timeBtwShots = startTimeBwtShots;
+            }
         }else {
             timeBtwShots -= Time.deltaTime;
         }
