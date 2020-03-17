@@ -7,8 +7,9 @@ public class RedDemonProjectile : MonoBehaviour
     public float speed;
     public float lifeTime;
     public GameObject destroyEffect;
+    public GameObject redDemon;
+    public float damage;
 
-    float damage;
     Transform targetIsPlayer;
     Vector2 target;
     // Start is called before the first frame update
@@ -16,8 +17,16 @@ public class RedDemonProjectile : MonoBehaviour
     {
         Invoke("DestroyRedDemonProjectile",lifeTime);
         targetIsPlayer = GameObject.Find("Player").GetComponent<Transform>();
-        damage = GameObject.Find("RedDemon").GetComponent<RedDemon>().damage;
         target = new Vector2(targetIsPlayer.position.x,targetIsPlayer.position.y);
+
+        target.x -= transform.position.x;
+        target.y -= transform.position.y;
+
+        target.x *=3;
+        target.y *= 3;
+
+        target.x += transform.position.x;
+        target.y += transform.position.y;
     }
 
     // Update is called once per frame

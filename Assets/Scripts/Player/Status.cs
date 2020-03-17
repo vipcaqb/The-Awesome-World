@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class Status : MonoBehaviour
 {
-
-    public float maxHp;
     public float hp;
     public float startTimeBtwTakeDamage;
+    public float money;
+    public float maxHp;
+    public float damage;
+    public float attackSpeed;
+    public float critical;
 
     float timeBtwTakeDamage;
 

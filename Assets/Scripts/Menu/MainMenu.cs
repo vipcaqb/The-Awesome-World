@@ -30,6 +30,10 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("Options");
     }
 
+    public void GotoUpgradeShop(){
+        SceneManager.LoadScene("LoadShop");
+    }
+
     public void Exit(){
         Application.Quit();
     }

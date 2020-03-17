@@ -194,7 +194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 8
-  speed: 60
+  speed: 80
   attackRange: 18
   hp: 3
   destroyEffect: {fileID: 6472043738092967401, guid: bf61a9e11350a1d4cb7dea9221260977,

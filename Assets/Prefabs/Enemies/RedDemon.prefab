@@ -481,10 +481,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHp: 5
   speed: 6
-  damage: 2
-  attackRange: 10
-  followPlayerRange: 20
-  startTimeBtwAttack: 1
+  damage: 5
+  attackRange: 13
+  followPlayerRange: 30
+  startTimeBtwAttack: 0.1
   redDemonProjectile: {fileID: 5444167147599291569, guid: e45358bbaefd27d47b2f5abf0086cd35,
     type: 3}
   shotPoint: {fileID: 1176213889}

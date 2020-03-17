@@ -230,7 +230,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
-  lifeTime: 1
+  lifeTime: 1.5
   damage: 1
   destroyEffect: {fileID: 6093325870977073845, guid: 1b1313f0c180fa745b08bd53e6efb01c,
     type: 3}
