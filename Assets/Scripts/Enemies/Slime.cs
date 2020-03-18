@@ -8,6 +8,7 @@ public class Slime : MonoBehaviour
     public float speed;
     public float attackRange;
     public float hp;
+    public float worth;
     public GameObject destroyEffect;
     
     bool isRight = true;
@@ -55,6 +56,7 @@ public class Slime : MonoBehaviour
     }
 
     void DestroySlime(){
+        GameData.playerInfo.money += worth;
         Instantiate(destroyEffect,transform.position,Quaternion.identity);
         Destroy(gameObject);
     }

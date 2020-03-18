@@ -15,6 +15,7 @@ public class Projectile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        damage = GameData.playerInfo.damage;
         Invoke("DestroyProjectile",lifeTime);
         mousePoint = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x,Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
         target.x = mousePoint.x - transform.position.x;

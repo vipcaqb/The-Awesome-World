@@ -10,8 +10,11 @@ public class LoadPlayerData : MonoBehaviour
     public string nextScene;
 
     string KEY_DATA = "playerinfo";
+    string KEY_DATA2 = "upgradeshop";
+
     private void Awake() {
-        LoadData();
+        LoadStatusData();
+        LoadShopData();
 
         SceneManager.LoadScene(nextScene);
     }
@@ -21,7 +24,7 @@ public class LoadPlayerData : MonoBehaviour
         
     }
 
-    void LoadData(){
+    void LoadStatusData(){
         string s = PlayerPrefs.GetString(KEY_DATA);
 
         if(string.IsNullOrEmpty(s)){
@@ -30,5 +33,16 @@ public class LoadPlayerData : MonoBehaviour
         }
 
         GameData.playerInfo = JsonConvert.DeserializeObject<PlayerInfo>(s);
+    }
+
+    void LoadShopData(){
+        string s = PlayerPrefs.GetString(KEY_DATA2);
+
+        if(string.IsNullOrEmpty(s)){
+            GameData.upgradeShopData = new UpgradeShopData();
+            return;
+        }
+
+        GameData.upgradeShopData = JsonConvert.DeserializeObject<UpgradeShopData>(s);
     }
 }

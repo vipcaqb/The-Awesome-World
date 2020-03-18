@@ -21,6 +21,16 @@ public class PlayerInfo
         attackSpeed = 1f;
         critical = 0f;
     }
+
+    public void Save(){
+        //convert data sang string
+
+        string s = JsonConvert.SerializeObject(this);
+
+        //Dung PlayerPrefs luu du lieu lai
+
+        PlayerPrefs.SetString(KEY_DATA,s);
+    }
     
     public void Save(Status sta){
         money = sta.money;

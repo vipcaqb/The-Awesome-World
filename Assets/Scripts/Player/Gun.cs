@@ -11,7 +11,9 @@ public class Gun : MonoBehaviour
 
     float timeBtwShots;
 
-
+    private void Start() {
+        startTimeBwtShots = 1f/GameData.playerInfo.attackSpeed;
+    }
 
 
     private void Update() {

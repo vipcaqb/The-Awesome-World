@@ -11,6 +11,7 @@ public class PauseMenu : MonoBehaviour
 
     GameObject pauseUI;
     bool paused;
+    public Text moneyValue;
 
     // Start is called before the first frame update
     void Start()
@@ -18,12 +19,13 @@ public class PauseMenu : MonoBehaviour
         paused = false;
         pauseUI = GameObject.Find("PauseMenuUI"); 
         pauseUI.SetActive(false);
+        moneyValue.text = GameData.playerInfo.money.ToString();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        moneyValue.text = GameData.playerInfo.money.ToString();
     }
 
 
@@ -48,6 +50,7 @@ public class PauseMenu : MonoBehaviour
     }
 
     public void BackToMainMenu(){
+        GameData.playerInfo.Save();
         Time.timeScale = 1f;
         paused = false;
         pauseUI.SetActive(false);

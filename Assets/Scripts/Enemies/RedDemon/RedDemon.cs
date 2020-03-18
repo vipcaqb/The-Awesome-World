@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RedDemon : MonoBehaviour
 {
+    public float worth;
     public float maxHp;
     public float speed;
     public float damage;
@@ -56,6 +57,7 @@ public class RedDemon : MonoBehaviour
     }
 
     void Dead(){
+        GameData.playerInfo.money += worth;
         Instantiate(redDemonDestroyEffect,transform.position,Quaternion.identity);
         Destroy(gameObject);
     }

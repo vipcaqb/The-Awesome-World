@@ -479,6 +479,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25613493e67153444b87277384619631, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  worth: 100
   maxHp: 5
   speed: 6
   damage: 5

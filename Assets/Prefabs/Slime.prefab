@@ -196,7 +196,8 @@ MonoBehaviour:
   damage: 8
   speed: 80
   attackRange: 18
-  hp: 3
+  hp: 40
+  worth: 30
   destroyEffect: {fileID: 6472043738092967401, guid: bf61a9e11350a1d4cb7dea9221260977,
     type: 3}
 --- !u!1 &7919361170865639352

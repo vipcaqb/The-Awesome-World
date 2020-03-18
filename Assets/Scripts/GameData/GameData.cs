@@ -5,4 +5,5 @@ using UnityEngine;
 public class GameData
 {
     static public PlayerInfo playerInfo;
+    static public UpgradeShopData upgradeShopData;
 }
